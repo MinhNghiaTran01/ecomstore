@@ -1,0 +1,20 @@
+
+{% extends "catalog.html" %} 
+{% load static %}
+{% block content %} 
+ <h1>{{ c.name }}</h1> 
+ {{ c.description }} 
+ <br /><br /> 
+ {% for p in products %} 
+ <div class="product_thumbnail"> 
+ <a href="{{ p.get_absolute_url }}"> 
+    <img src="{% static 'p1.jpg' %}" alt="" class="bn">
+ <!-- <img src="https://scontent.fhan7-1.fna.fbcdn.net/v/t39.30808-1/330159132_209616258392279_6716177014824478301_n.jpg?stp=dst-jpg_p480x480&_nc_cat=107&ccb=1-7&_nc_sid=4da83f&_nc_ohc=bcdsCuCH4jUAX-1gDmW&_nc_ht=scontent.fhan7-1.fna&oh=00_AfDW2lxLVlAeWq0EwhyM55MGtI59J1GvNf-BYfr1fsnE9g&oe=65B2B9A0" 
+ alt="{{ p.name }}" class="bn" />  -->
+ <br /> 
+ {{ p.name }} 
+ </a> 
+ </div> 
+
+ {% endfor %} 
+{% endblock %} 

@@ -1,0 +1,39 @@
+<h3>Categories</h3>
+<ul id="categories">
+  {% with active_categories as cats %}
+    {% for c in cats %}
+      <li>
+        {% if c.get_absolute_url == request_path %}
+          {{ c.name }}<br />
+        {% else %}
+          <a href="{{ c.get_absolute_url }}" class="category">{{ c.name }}</a><br />
+        {% endif %}
+      </li>
+    {% endfor %}
+  {% endwith %}
+</ul>
+
+
+ <style>h3{ 
+    background-color:#98AC5E; 
+    color:White; 
+    padding:3px; 
+    margin-bottom:6px; 
+   } 
+   ul#categories{ 
+    list-style:none; 
+   } 
+   ul#categories li{ 
+    font-weight:bold; 
+    color:#616161; 
+   } 
+   ul#categories li a{ 
+    text-decoration:underline; 
+   } 
+   div#footer a{ 
+    color:White; 
+    font-size:small; 
+    text-decoration:underline; 
+    font-weight:normal; 
+    margin-right:10px; 
+   } </style>
